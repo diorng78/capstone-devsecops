@@ -12,6 +12,7 @@ on:
       - dev
       - uat
       - prod
+      - feature.test
     
 
 jobs:
