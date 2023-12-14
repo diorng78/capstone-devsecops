@@ -76,16 +76,16 @@ jobs:
         with:
           args: --severity-threshold=high
 
-        steps:
-            - name: Build App
-              run: ./build.sh
+      steps:
+      - name: Build App
+        run: ./build.sh
             
-            - name: Archive Test Results
-              if: always()
-              uses: actions/upload-artifact@v1
-              with:
-                name: test-results
-                path: app/build
+      - name: Archive Test Results
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+        name: test-results
+        path: app/build
 
 #CD - to run only on push on to dev/main branch
   CD:
