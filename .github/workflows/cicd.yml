@@ -28,7 +28,7 @@ jobs:
   CI:
 
     needs: Pre-Deploy
-
+    if: always()
     runs-on: ubuntu-latest
     
     steps:
