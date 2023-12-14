@@ -63,6 +63,10 @@ jobs:
       - name: Terraform plan
         run: terraform plan -var-file=${{github.base_ref || github.ref_name}}.tfvars
 
+      - name: List Terraform files
+        run: |
+          find . -type f -name '*.tf' ! -name 'main.tf' > terraform_files.txt
+
       - name: Install Snyk CLI
         run: npm install -g snyk
       - name: Run Snyk to check for vulnerabilities
